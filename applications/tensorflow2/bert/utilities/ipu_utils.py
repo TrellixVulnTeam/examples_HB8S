@@ -40,6 +40,7 @@ def create_ipu_strategy(num_ipus_per_replica,
     :return: An IPU strategy
     """
     ipu_config = ipu.config.IPUConfig()
+    ipu_config.experimental.enable_spmd = True
 
     # Enable / disable floating point exceptions.
     ipu_config.floating_point_behaviour.inv = fp_exceptions
